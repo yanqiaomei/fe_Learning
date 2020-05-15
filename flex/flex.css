@@ -1,0 +1,167 @@
+/* 交叉轴对齐.html
+
+交叉轴上多行对齐:
+当一行放不下时，我们会使用flex-wrap: wrap属性让内容折行，如果想让多行内容在弹性盒子的交叉轴对齐的话，就用到了align-content，也只能用在多行的情况下。
+
+align-content和align-items的异同:
+align-content: stretch | flex-start | flex-end | center | space-between | space-around;
+align-items: stretch | flex-start | flex-end | center | baseline;
+
+当align-content和align-items都为stretch时，弹性元素会充满交叉轴。
+当align-items设置为flex-start或者给弹性元素设置一个具体高度时，行与行之间形成间距。因为align-content会以整行为单位，此时会将整行进行拉伸占满交叉轴。而align-items设置了高度或者是flex-start，不能用高度进行拉伸的情况下，选择了用间距。
+
+最终结论就是:两者的作用域不同，align-content管整体，align-items管单行。
+*/
+.main{
+  width: 300px;
+  height: 300px;
+  background-color: darkcyan;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+/* .main > div:first-child {
+  height: 50px;
+} */
+.box1,.box2{
+  width: 100px;
+  height: 50px;
+}
+.box1{
+  background-color: black;
+}
+.box2{
+  background-color: cornflowerblue;
+}
+
+
+/*flex骰子.html
+
+各中布局
+
+*/
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.dice1, .dice1-1, .dice1-2, .dice2, .dice2-1, .dice2-2, .dice3, .dice3-1, .dice3-2, .dice4, .dice4-1, .dice4-2, .dice5, .dice5-1, .dice5-2, .dice6, .dice6-1, .dice6-2, .dice7, .dice7-1, .dice7-2{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  margin: 10px;
+}
+
+.dice1{
+  justify-content: flex-start;
+}
+.dice1-1{
+  align-items: center;
+}
+.dice1-2{
+  align-items: flex-end;
+}
+
+.dice2{
+  justify-content: center;
+}
+.dice2-1{
+  justify-content: center;
+  align-items: center;
+}
+.dice2-2{
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.dice3{
+  justify-content: flex-end;
+}
+.dice3-1{
+  align-items: center;
+  justify-content: flex-end;
+}
+.dice3-2{
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.dice4{
+  justify-content: space-between;
+}
+.dice4-1{
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dice5{
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-end; /*或者align-items: flex-end;*/
+}
+.dice5-1{
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.dice5-2{
+  justify-content: space-between;
+}
+
+.dice6-1{
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dice6-2{
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dice7{
+  flex-direction: column;
+}
+.dice7-1{
+  justify-content: space-between;
+}
+.dice7-2{
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.middle{
+  display: flex;
+  justify-content: space-between;
+}
+.middle1{
+  display: flex;
+  justify-content: center;
+}
+.middle2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.middle3{
+  display: flex;
+  justify-content: space-around;
+}
+
+.little1,.little2,.little3,.little4,.little5,.little6,.little7,.little8,.little9,.little10{
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  color: #fff;
+}
+.little3{
+  align-self: center;
+}
+.little4{
+  align-self: flex-end;
+}
+.little6{
+  align-self: center;
+}
+.little7{
+  align-self: flex-end;
+}

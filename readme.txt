@@ -1,4 +1,3 @@
-Git is a distributed version control system.
-Git has a mutable index called stage.
-Git tracks changes.
-Git tracks changes of files.
+flex文件：
+  交叉轴对齐.html: align-content和align-items的用法（align-content管整体，align-items管单行）。
+  flex骰子.html: flex常用布局例子。
