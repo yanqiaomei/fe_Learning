@@ -1,0 +1,19 @@
+.content{
+  width: 500px;
+  height: 500px;
+  border: 1px solid #111;
+}
+.box1,.box2{
+  width: 200px;
+}
+.box1{
+  background-color: cadetblue;
+  height: 200px;
+}
+.box2{
+  background-color: red;
+  position: sticky; /**/
+  top: 500px;
+  left: 0;
+  height: 1500px;
+}
